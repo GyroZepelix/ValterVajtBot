@@ -6,7 +6,7 @@ from random import random, randrange
 import discord
 import json
 
-TOKEN = "OTkzOTQ2NjM0ODQzMDcwNTI0.GeDF9x.wS4FiffYx1mSTENwpNxnMpLpuRIjMPcgcByIks"
+TOKEN = 0
 f = open('walterDB.json', encoding='utf-8')
 db = json.load(f)
 
