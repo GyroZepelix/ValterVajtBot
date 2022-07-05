@@ -6,9 +6,10 @@ from random import random, randrange
 import discord
 import json
 
-TOKEN = 0
-f = open('walterDB.json', encoding='utf-8')
-db = json.load(f)
+fDB = open('walterDB.json', encoding='utf-8')
+f = open('token.txt', "r")
+db = json.load(fDB)
+TOKEN = f.read()
 
 client = discord.Client()
 
@@ -17,8 +18,8 @@ client = discord.Client()
 async def on_message(message):
     username = str(message.author).split('#')[0]
     user_message = str(message.content)
-    channel = str(message.channel.name)
-    print(f'{username}: {user_message} ({channel})')
+    #channel = str(message.channel.name)
+    #print(f'{username}: {user_message} ({channel})')
 
     if message.author == client.user:
         return
