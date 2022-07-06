@@ -73,7 +73,12 @@ async def say(ctx, arg1, arg2):
         return
 
     if(arg1 == "" or arg2 == ""):
-        ctx.send("Correct Syntax : .say <voice> <text>")
+        await ctx.send("Correct Syntax : .say <voice> <text>")
+        return
+
+    lenarg2 = len(arg2)
+    if(lenarg2 < 5 or lenarg2 > 200):
+        await ctx.send(f"Text mora biti veci od 4 slova a manji od 200! Tvoj ima {lenarg2} slova!")
         return
 
     response = tts_api.save_to_file(arg1, arg2, "tts.wav")
